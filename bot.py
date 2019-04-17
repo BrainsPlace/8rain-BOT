@@ -2,6 +2,7 @@ import discord
 import asyncio
 import time
 import re
+import sys
 TOKEN = 'put your token in token.txt'
 HELP = """
 !timer {time in minutes}  ex: `!timer 30`
@@ -50,7 +51,7 @@ class MyClient(discord.Client):
                 await say_after(message, int(search.group(1))*60, 'time is up! -' + str(message.author.mention))
 
 
-with open('token.txt', 'r') as file:
+with open(sys.path[0] + '\\token.txt', 'r') as file:
     TOKEN = file.read().replace('\n','')
 
 client = MyClient()
