@@ -39,7 +39,7 @@ class MyClient(discord.Client):
                 await say_after(message, input[1], 'time is up! - ' + input[2])
 
 with open('token.txt', 'r') as file:
-    TOKEN = file.read()
+    TOKEN = file.read().replace('\n','')
 
 client = MyClient()
 client.run(TOKEN)
